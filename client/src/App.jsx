@@ -1,14 +1,17 @@
-import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import { LobbyScreen } from "./components/Lobby";
+import HomePage from "./pages/Home";
+import { SocketProvider } from "./Providers/Socket";
+import RoomPage from "./pages/Room";
+import LobbyScreen from "./pages/Lobby";
 
 function App() {
   return (
-    <div>
+    <>
       <Routes>
         <Route path="/" element={<LobbyScreen />} />
+        <Route path="/room/:id" element={<RoomPage />} />
       </Routes>
-    </div>
+    </>
   );
 }
 
